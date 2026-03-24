@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy – Pirate Map Quest Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Crimson Text', Georgia, serif;
+            line-height: 1.75;
+            color: #b8c8d8;
+            background: linear-gradient(175deg, #0a1628 0%, #0f2035 25%, #132a42 50%, #0e1f33 75%, #091420 100%);
+            padding: 28px;
+            position: relative;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        .ocean-layer {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            background:
+                radial-gradient(ellipse 80% 50% at 70% 100%, rgba(0, 80, 120, 0.12) 0%, transparent 50%),
+                radial-gradient(ellipse 50% 40% at 20% 5%, rgba(212, 175, 55, 0.05) 0%, transparent 45%);
+        }
+
+        .map-grid {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.025;
+            background-image:
+                linear-gradient(rgba(212, 175, 55, 0.5) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(212, 175, 55, 0.5) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        .wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-card {
+            background: linear-gradient(160deg, rgba(18, 38, 60, 0.95) 0%, rgba(20, 14, 8, 0.96) 100%);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 20px;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 20px 52px rgba(0, 0, 0, 0.5);
+            padding: 36px 40px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-card::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 15%;
+            right: 15%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.35), transparent);
+        }
+
+        .header-icon {
+            font-size: 48px;
+            flex-shrink: 0;
+        }
+
+        .header-text h1 {
+            font-family: 'Cinzel Decorative', serif;
+            color: #fff;
+            font-size: 1.7em;
+            font-weight: 900;
+            letter-spacing: 0.02em;
+            line-height: 1.2;
+        }
+
+        .header-text h1 .gold {
+            background: linear-gradient(135deg, #d4af37, #f0d060, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-text .app-label {
+            color: #7eb8d8;
+            font-size: 0.95em;
+            font-style: italic;
+            margin-top: 4px;
+        }
+
+        .effective-date {
+            text-align: center;
+            color: #6a8098;
+            font-size: 0.9em;
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+
+        .section {
+            background: linear-gradient(165deg, rgba(16, 32, 52, 0.92) 0%, rgba(12, 22, 36, 0.95) 100%);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 16px;
+            border: 1.5px solid rgba(212, 175, 55, 0.15);
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
+            padding: 28px 32px;
+            margin-bottom: 18px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .section:hover {
+            border-color: rgba(212, 175, 55, 0.3);
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .section-icon {
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .section h2 {
+            font-family: 'Cinzel Decorative', serif;
+            background: linear-gradient(135deg, #d4af37, #f0d060);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 1.05em;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+        }
+
+        .section p {
+            margin: 10px 0;
+            font-size: 1.02em;
+            color: #b0c0d0;
+        }
+
+        .section p:first-of-type {
+            margin-top: 0;
+        }
+
+        .highlight-box {
+            background: rgba(212, 175, 55, 0.08);
+            border-left: 3px solid rgba(212, 175, 55, 0.5);
+            border-radius: 0 10px 10px 0;
+            padding: 16px 20px;
+            margin: 14px 0;
+        }
+
+        .highlight-box p {
+            color: #c8d4e0;
+            margin: 4px 0;
+        }
+
+        .data-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin: 14px 0;
+        }
+
+        .data-item {
+            background: rgba(0, 60, 100, 0.12);
+            border: 1px solid rgba(126, 184, 216, 0.15);
+            border-radius: 10px;
+            padding: 14px 16px;
+            text-align: center;
+        }
+
+        .data-item .icon {
+            font-size: 22px;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .data-item .label {
+            color: #8aa8c0;
+            font-size: 0.88em;
+            font-weight: 600;
+        }
+
+        .data-item .status {
+            color: #5cb85c;
+            font-size: 0.82em;
+            font-weight: 700;
+            margin-top: 4px;
+            letter-spacing: 0.04em;
+        }
+
+        .contact-card {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 14px;
+        }
+
+        .contact-entry {
+            flex: 1;
+            min-width: 200px;
+            background: rgba(212, 175, 55, 0.06);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 10px;
+            padding: 16px 18px;
+        }
+
+        .contact-entry .label {
+            color: #6a8098;
+            font-size: 0.82em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 4px;
+        }
+
+        .contact-entry .value {
+            color: #e8dcc0;
+            font-weight: 700;
+            font-size: 0.96em;
+        }
+
+        .contact-entry a {
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .contact-entry a:hover {
+            color: #f0d060;
+        }
+
+        a {
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: #f0d060;
+        }
+
+        strong {
+            color: #e0d8c8;
+            font-weight: 700;
+        }
+
+        .back-section {
+            text-align: center;
+            margin-top: 32px;
+            margin-bottom: 10px;
+        }
+
+        .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #1a0e02;
+            font-weight: 700;
+            padding: 14px 32px;
+            background: linear-gradient(145deg, #d4af37 0%, #b8942e 50%, #8a6d1b 100%);
+            border-radius: 14px;
+            border: 2px solid rgba(240, 208, 96, 0.5);
+            transition: all 0.3s;
+            box-shadow: 0 8px 28px rgba(212, 175, 55, 0.25);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 0.95em;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 36px rgba(212, 175, 55, 0.4);
+            color: #1a0e02;
+        }
+
+        @media (max-width: 768px) {
+            .header-card { flex-direction: column; text-align: center; padding: 28px 22px; }
+            .header-text h1 { font-size: 1.4em; }
+            .section { padding: 22px 20px; }
+            .data-grid { grid-template-columns: 1fr; }
+            .contact-card { flex-direction: column; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ocean-layer"></div>
+    <div class="map-grid"></div>
+
+    <div class="wrapper">
+        <div class="header-card">
+            <span class="header-icon">🏴‍☠️</span>
+            <div class="header-text">
+                <h1>Privacy <span class="gold">Policy</span></h1>
+                <p class="app-label">Pirate Map Quest Game</p>
+            </div>
+        </div>
+
+        <p class="effective-date">Last updated: March 2026</p>
+
+        <div class="section">
+            <div class="section-header">
+                <span class="section-icon">🧭</span>
+                <h2>About This Policy</h2>
+            </div>
+            <p>This Privacy Policy explains how we handle information related to <strong>Pirate Map Quest Game</strong>, an adventure game in which players follow treasure maps, explore mysterious islands, and uncover hidden riches. We believe your privacy is as valuable as buried treasure, and we are committed to safeguarding it. This policy applies to the Pirate Map Quest Game application and any associated web pages.</p>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <span class="section-icon">🛡️</span>
+                <h2>Information We Do Not Collect</h2>
+            </div>
+            <p>We take a straightforward approach to data: <strong>we do not collect it</strong>. Specifically, Pirate Map Quest Game does not gather, store, or transmit any of the following:</p>
+            <div class="data-grid">
+                <div class="data-item">
+                    <span class="icon">👤</span>
+                    <span class="label">Personal Identity</span>
+                    <span class="status">NOT COLLECTED</span>
+                </div>
+                <div class="data-item">
+                    <span class="icon">📍</span>
+                    <span class="label">Location Data</span>
+                    <span class="status">NOT COLLECTED</span>
+                </div>
+                <div class="data-item">
+                    <span class="icon">📊</span>
+                    <span class="label">Usage Analytics</span>
+                    <span class="status">NOT COLLECTED</span>
+                </div>
+                <div class="data-item">
+                    <span class="icon">📣</span>
+                    <span class="label">Advertising IDs</span>
+                    <span class="status">NOT COLLECTED</span>
+                </div>
+            </div>
+            <p>No names, emails, phone numbers, device identifiers, or IP addresses are collected by us for any purpose.</p>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <span class="section-icon">📦</span>
+                <h2>On-Device Storage</h2>
+            </div>
+            <p>Pirate Map Quest Game may save certain information locally on your device to enhance your gameplay experience. This includes your progress through island maps, unlocked treasures, sound preferences, and other in-game settings.</p>
+            <div class="highlight-box">
+                <p><strong>Important:</strong> All locally stored data remains entirely on your device. It is never uploaded to any server or shared with any third party. Removing the app from your device will permanently erase this data.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <span class="section-icon">🔗</span>
+                <h2>External Services &amp; Links</h2>
+            </div>
+            <p>Pirate Map Quest Game does not integrate any third-party analytics platforms, advertising frameworks, or social media SDKs that would collect your personal data.</p>
+            <p>Our website or app may contain links to external destinations, such as the Apple App Store. These third-party services operate under their own privacy policies and terms, over which we have no control. We encourage you to review their privacy practices before providing any information.</p>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <span class="section-icon">👶</span>
+                <h2>Players of All Ages</h2>
+            </div>
+            <p>Pirate Map Quest Game is rated 4+ and is suitable for players of all ages. Because we do not collect personal information from any user, our practices are consistent with applicable child protection laws and regulations, including COPPA and similar frameworks worldwide.</p>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <span class="section-icon">🌍</span>
+                <h2>Your Rights</h2>
+            </div>
+            <p>Depending on where you live, you may have certain rights regarding personal data, such as the right to access, correct, or delete your information. Since we do not collect any personal data, there is nothing for us to provide, modify, or remove. If you have questions about this, please feel free to reach out using the contact details below.</p>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <span class="section-icon">📜</span>
+                <h2>Updates to This Policy</h2>
+            </div>
+            <p>We reserve the right to modify this Privacy Policy as needed. When changes are made, the "Last updated" date at the top of this page will be revised accordingly. Your continued use of Pirate Map Quest Game after any modifications indicates your acceptance of the updated policy. We recommend revisiting this page from time to time.</p>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <span class="section-icon">💬</span>
+                <h2>Contact</h2>
+            </div>
+            <p>If you have any questions, concerns, or requests related to this Privacy Policy or Pirate Map Quest Game, you may reach us through the following:</p>
+            <div class="contact-card">
+                <div class="contact-entry">
+                    <div class="label">Developer</div>
+                    <div class="value">Shaban Tanjil</div>
+                </div>
+                <div class="contact-entry">
+                    <div class="label">Developer Privacy Policy</div>
+                    <div class="value"><a href="https://www.icloud.com/pages/0e3n4WO3S0Vj9gog2956RSWVA#shaban_tanjil_Privacy_Policy" target="_blank" rel="noopener noreferrer">View on iCloud</a></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="back-section">
+            <a href="index.html" class="nav-btn">&#9668; Back to Game</a>
+        </div>
+    </div>
+</body>
+
+</html>
